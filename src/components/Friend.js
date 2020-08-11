@@ -5,6 +5,10 @@ export default function Friend(props) {
   // 1- What does a Friend need?
   const { friend, changeStatus } = props
 
+  const flipStatus = evt => {
+    changeStatus(friend.id)
+  }
+
   return (
     <div className='friend-friends container'>
       {/* 2- Fix the JSX so it displays real info coming into the component */}
@@ -15,7 +19,8 @@ export default function Friend(props) {
           <p>Age: {friend.age}</p>
 
           <p>Married: {friend.married ? 'Yup' : 'Nope'}
-            <button>change</button>
+          <button onClick={(evt) => changeStatus(friend.id)}>change</button>
+          <button onClick={flipStatus}>change</button>
           </p>
           <div>Likes:
             <ul>
