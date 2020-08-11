@@ -21,6 +21,23 @@ export default function App() {
 
   // 5- Build a `changeStatus` function that takes an id and
   // changes the `married` from true to false and viceversa
+  const changeStatus = id => {
+    // we need to swap the friends slice of state
+    // with a new array of friends, and the friend
+    // whose id == id will have its married status toggled
+    setFriends(
+      // new array of friends with the change we desire
+      friends.map(fr => {
+        // if the id of the current fr matches the one from argument
+        if (fr.id === id) {
+          // return a copy of fr with the civil status flipped
+          return { ...fr, married : !fr.married }
+        }
+        // otherwise return fr unchanged
+        return fr
+      })
+    )
+  }
 
   // STRETCH - Make a helper function that returns
   // a filtered array of friends data (filtering by search term)
