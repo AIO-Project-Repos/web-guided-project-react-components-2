@@ -13,9 +13,11 @@ console.log(dummyData)
 export default function App() {
   // 3- Initialize a slice of state to keep track of the data
   // using the dummy data as the initial value of the slice of state
+  const [friends, setFriends] = useState(dummyData)
 
   // 4- Initialize a slice to keep track of the value of the search box
   // using an empty string as the initial value of the slice
+  const [searchBox, setSearchBox] = useState("")
 
   // 5- Build a `changeStatus` function that takes an id and
   // changes the `married` from true to false and viceversa
